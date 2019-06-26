@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
   <link rel="stylesheet" href="style.css">
-  <script src="myscripts.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 
@@ -17,16 +17,91 @@
 
     <div class="card-bot">
       <ul class="list_inline" style="list-style: none;">
-        <li><a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+
       </ul>
     </div>
   </div>
 
 
+  <audio controls>
+    <source src="music/waves.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div id="content">
+    <input type="file" id="thefile" accept="audio/*" />
+    <canvas id="canvas"></canvas>
+    <audio id="audio" src="music/waves.mp3" controls></audio>
+  </div>
 
 
-  <audio autoplay="true" src="music/waves.mp3">
+  <script>window.onload = function() {
+
+    var file = document.getElementById("thefile");
+    var audio = document.getElementById("audio");
+
+    file.onchange = function() {
+      var files = this.files;
+      audio.src = URL.createObjectURL(files[0]);
+      audio.load();
+      audio.play();
+      var context = new AudioContext();
+      var src = context.createMediaElementSource(audio);
+      var analyser = context.createAnalyser();
+
+      var canvas = document.getElementById("canvas");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      var ctx = canvas.getContext("2d");
+
+      src.connect(analyser);
+      analyser.connect(context.destination);
+
+      analyser.fftSize = 256;
+
+      var bufferLength = analyser.frequencyBinCount;
+      console.log(bufferLength);
+
+      var dataArray = new Uint8Array(bufferLength);
+
+      var WIDTH = canvas.width;
+      var HEIGHT = canvas.height;
+
+      var barWidth = (WIDTH / bufferLength) * 2.5;
+      var barHeight;
+      var x = 0;
+
+      function renderFrame() {
+        requestAnimationFrame(renderFrame);
+
+        x = 0;
+
+        analyser.getByteFrequencyData(dataArray);
+
+        ctx.globalAlpha = 0.2
+        ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+        for (var i = 0; i < bufferLength; i++) {
+          barHeight = dataArray[i];
+
+          var r = barHeight + (50 * (i/bufferLength));
+          var g = 150 * (i/bufferLength);
+          var b = 350;
+          var a = 0.1;
+
+          ctx.fillStyle = "rgba(" + r + "," + g + "," + b + "," + a + ")";
+          ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+
+          x += barWidth + 1;
+        }
+      }
+
+      audio.play();
+      renderFrame();
+    };
+  };</script>
+
+
 
 
 
