@@ -1,0 +1,324 @@
+html {
+    color: -internal-root-color;
+}
+
+div {
+    display: block;
+}
+
+/*#my-portait{
+  opacity: 0.5;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+}*/
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: block;
+    margin: 8px;
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+    font-weight: 900;
+    height: 30px;
+    line-height: 90px;
+    text-align: center;
+}
+
+body {
+    background-size: 400% 400%;
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+a {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #6B72E1;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+h2 {
+    color: #7ECE90;
+    font-size: 50px;
+    font-weight: lighter;
+    font-weight: 500;
+}
+
+.list_inline li {
+    display: inline;
+    text-align: auto;
+}
+
+
+
+.list_inline {
+    padding: 0;
+}
+
+audio {
+   display:none;
+}
+
+
+.card-white {
+    background-image: url(images/waterfall.jpg);
+    background-size: 100% 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-color: #ffefd5;
+    padding: 40px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    border-radius: 50px;
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.card-bot {
+    background-image: url(images/neon.jpg);
+    background-position: center
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.04);
+    background-size: 100% 100%;
+    padding: 90px 200px 100px 200px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    margin: 10px 150px;
+    text-align: center;
+}
+
+.card-bot: hover{
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+
+
+
+.container {
+    width: 700px;
+    margin: 40px auto;
+}
+
+
+.list-inline i {
+    font-size: 50px;
+    color: rgb(230, 230, 230);
+}
+
+.fa, .fab, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+.btn-blue {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 10px 10px;
+    border-radius: 4px;
+}
+
+
+.btn-blue:hover {
+    background-color: black;
+    color: white;
+}
+
+
+
+/*#animated_txt {
+  width: 300px;
+  height: 200px;
+  background: red;
+  -webkit-animation: mymove 5s infinite;  Chrome, Safari, Opera
+  animation: mymove 5s infinite;
+}
+
+
+
+@-webkit-keyframes mymove {
+  from {background-color: red;}
+  to {background-color: blue;}
+}
+*/
+
+
+.element {
+  margin: 0 auto;
+  width: 150px;
+  height: 100px;
+  margin-bottom: 50px;
+  position: relative;
+  left: 0;
+}
+
+.element-1 {
+  -webkit-animation: shake 100s infinite;
+  animation: shake 100s infinite;
+}
+
+
+
+@-webkit-keyframes shake {
+  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100% {
+    left: 50px;
+  }
+  5%,
+  15%,
+  25%,
+  35%,
+  45%,
+  55%,
+  65%,
+  75%,
+  85%,
+  95%
+  {left: -50px;}
+}
+
+@keyframes shake {
+  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100% {
+    left: 50px;
+  }
+  5%,
+  15%,
+  25%,
+  35%,
+  45%,
+  55%,
+  65%,
+  75%,
+  85%,
+  95% {
+    left: -50px;
+  }
+}
+
+
+
+
+-webkit-animation: turqoise-aqua 0s ease infinite;
+-moz-animation: turqoise-aqua 0s ease infinite;
+animation: turqoise-aqua 0s ease infinite;
+
+@-webkit-keyframes turqoise-aqua {
+    0%{background-position:26% 0%}
+    50%{background-position:75% 100%}
+    100%{background-position:26% 0%}
+}
+@-moz-keyframes turqoise-aqua {
+    0%{background-position:26% 0%}
+    50%{background-position:75% 100%}
+    100%{background-position:26% 0%}
+}
+@keyframes turqoise-aqua {
+    0%{background-position:26% 0%}
+    50%{background-position:75% 100%}
+    100%{background-position:26% 0%}
+}
+
+
+.container-wave {
+  width 250px;
+  height 250px;
+  background rgba(255, 255, 255, .1);
+  border-radius 6px;
+  position relative;
+  overflow hidden;
+}
+
+.wave {
+  position absolute;
+  top 50%;
+  left 50%;
+  width 100%;
+  height 100%;
+  transform translateX(-50%) scaleX(1.2);
+  border-radius 40%;
+  background alpha(pink, 7%);
+  animation spin 3s linear infinite;
+  &:nth-child(2)
+    border-radius 35%
+    animation spin 3s .27s linear infinite;
+  &:nth-child(3)
+    border-radius 50%
+    animation spin 3s 1s linear infinite;
+}
+
+
+
+
+#infinity {
+  background-image: url('images/drone.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 212px;
+  height: 150px;
+  box-sizing: content-box;
+}
+
+#infinity:before,
+#infinity:after {
+
+    display: inline-block;
+    width: 100px;
+    height: 200px;
+    content:"";
+}
+#infinity:after {
+
+    display: inline-block;
+    width: 100px;
+    height: 200px;
+    content:"";
+}
+
+
+body {
+  background-image: url(images/wave.jpg);
+  background-repeat: no-repeat;
+  background-size: 3000px 1000px;
+/*  animation: colorchange 200s;
+  -webkit-animation: colorchange 200s;*/
+}
+
+@keyframes colorchange
+{
+  0%   {background: #87afd7;}
+  100%  {background: #1acea0;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
